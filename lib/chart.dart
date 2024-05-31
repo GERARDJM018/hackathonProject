@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hackathon2024/auth/auth.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 
 class ChartScreen extends StatefulWidget {
   const ChartScreen({ Key? key }) : super(key: key);
@@ -199,7 +198,6 @@ class _ChartScreenState extends State<ChartScreen> {
 
   @override
   Widget build(BuildContext context) {
-    ChartData ch;
     return Scaffold(
       appBar: AppBar(
         title: Text('Bar Chart'),
@@ -209,7 +207,11 @@ class _ChartScreenState extends State<ChartScreen> {
           height: MediaQuery.of(context).size.height * 0.7,
           child: SfCartesianChart(
             primaryXAxis: CategoryAxis(title: AxisTitle(text:'Week')), 
+<<<<<<< HEAD
             legend: Legend(isVisible: true, position: LegendPosition.bottom, shouldAlwaysShowScrollbar: true),
+=======
+            legend: Legend(isVisible: true, overflowMode: LegendItemOverflowMode.wrap, position: LegendPosition.bottom),
+>>>>>>> a6de1ebcccbc37958db8cb4bb0c05f43fb13f907
             series: <CartesianSeries>[
               StackedColumnSeries<ChartData, String>(
                 dataSource: chartData,
