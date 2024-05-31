@@ -2,9 +2,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hackathon2024/auth/auth.dart';
+import 'package:hackathon2024/chart.dart';
+import 'package:hackathon2024/education_card.dart';
 import 'package:hackathon2024/firebase_option.dart';
+import 'package:hackathon2024/pages/add_pages.dart';
+import 'package:hackathon2024/pages/home_page.dart';
 import 'package:hackathon2024/widget_tree.dart';
 import 'package:hackathon2024/widgets/report_card.dart';
+import 'package:flutter/cupertino.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,6 +56,13 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
+  static List<Widget> _pages = <Widget>[
+    HomePage(),
+    ChartScreen(),
+    AddPages(),
+    EducationCard(title: "title", content: "c")
+  ];
+
   final _firebaseAuth = FirebaseAuth.instance;
 
   void _onItemTapped(int index) {
@@ -70,42 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-
-          children: <Widget>[
-            Container(
-              width: MediaQuery.of(context).size.width * 0.95,
-              child: (ReportCard(title: "Title", body: "Body")))
-          ],
-
-        ),
-      ),
+      body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

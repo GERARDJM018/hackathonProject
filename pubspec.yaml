@@ -30,12 +30,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  dropdown_button2: ^2.3.9
+  image_picker: ^1.1.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   firebase_core: ^2.32.0
   firebase_auth: ^4.20.0
+  firebase_storage: ^11.7.7
   cloud_firestore: ^4.17.5
   flutter_charts: ^0.5.2
   syncfusion_flutter_charts: ^25.2.6
@@ -67,8 +70,9 @@ flutter:
     - assets/person.jpg
 
   # To add assets to your application, add an assets section, like this:
+
+  # To add assets to your application, add an assets section, like this:
   # assets:
-    
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
