@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon2024/widgets/report_card.dart';
 
 void main() {
   runApp(const MyApp());
@@ -105,13 +106,9 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            Container(
+              width: MediaQuery.of(context).size.width * 0.95,
+              child: ReportCard(title: "Title", body: "Body"))
           ],
         ),
       ),
