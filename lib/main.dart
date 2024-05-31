@@ -100,10 +100,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
           children: <Widget>[
             Container(
+<<<<<<< HEAD
                 width: MediaQuery.of(context).size.width * 0.95,
                 child: ReportCard(
                     title: "Titsssssfsfsefsefsefsefsefsefsefsfsefsefsefle",
                     body: "Body"))
+=======
+              width: MediaQuery.of(context).size.width * 0.95,
+              child: (ReportCard(title: "Title", body: "Body")))
+>>>>>>> branch-button
           ],
 
         ),
