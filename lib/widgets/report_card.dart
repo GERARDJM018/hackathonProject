@@ -92,13 +92,18 @@ class _ReportCardState extends State<ReportCard> {
     return InkWell(
       onTap: (){},
       child: Card(
-        color: const Color.fromARGB(-1, 206, 214, 244),
+        color: Colors.white,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
+            Container(
               padding: const EdgeInsets.all(8.0),
+<<<<<<< HEAD
               child: Text(widget.title, style: TextStyle(fontSize: 24),),
+=======
+              child: Text("Title", style: TextStyle(fontSize: 24),),
+              color: Colors.white,
+>>>>>>> f8a3b1bad81033f2799c3164fac82607f91999a5
             ), 
             Container(
               color: Colors.white,
