@@ -63,11 +63,12 @@ flutter:
   uses-material-design: true
   assets:
     - lib/images/wesafe.png
-
-  # To add assets to your application, add an assets section, like this:
-  assets:
     - assets/BlocScam.jpg
     - assets/person.jpg
+
+  # To add assets to your application, add an assets section, like this:
+  # assets:
+    
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
