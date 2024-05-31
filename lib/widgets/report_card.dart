@@ -18,15 +18,14 @@ class ReportCard extends StatelessWidget {
     return InkWell(
       onTap: (){},
       child: Card(
-        color: Colors.white,
+        color: const Color.fromARGB(-1, 206, 214, 244),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-              Container(
-                padding: const EdgeInsets.all(8.0),
-                child: Text("Title", style: TextStyle(fontSize: 24),),
-                color: Colors.white,
-              ), 
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text("Title", style: TextStyle(fontSize: 24),),
+            ), 
             Container(
               color: Colors.white,
               width: MediaQuery.of(context).size.width,
@@ -36,19 +35,15 @@ class ReportCard extends StatelessWidget {
                 child: Text("Body ", maxLines: 4, softWrap: true,),
               )), 
             Row(children: [
-              Container(
+              Padding(
                 padding: const EdgeInsets.all(4.0),
                 child: StyleOne(icon: Icon(Icons.arrow_upward), counter: "12", func: () {},),
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Color.fromARGB(255, 209, 201, 201),
-                  ),)
               ),
-              Container(
+              Padding(
                 padding: const EdgeInsets.all(4.0),
                 child: StyleTwo(icon: Icon(Icons.arrow_downward), func: () {},),
               ),
-              Container(
+              Padding(
                 padding: const EdgeInsets.all(4.0),
                 child: StyleTwo(
                   func: () {},
