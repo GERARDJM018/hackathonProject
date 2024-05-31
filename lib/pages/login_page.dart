@@ -20,7 +20,6 @@ class _LoginPageState extends State<LoginPage> {
   void signUserIn() {}
 
   Future<void> signInWithEmailAndPassword() async {
-    print(11);
     try {
       await Auth(FirebaseAuth.instance).signInWithEmailAndPassword(
         email: _controllerEmail.text,
@@ -35,8 +34,8 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _logo() {
     return Image.asset(
-      'lib/images/Zenith-logos_white.png',
-      scale: 5,
+      "lib/images/wesafe.png",
+      scale: 1.5,
     );
   }
 
@@ -84,105 +83,152 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 50),
-
                 // logo
                 _logo(),
-
                 // welcome back you've been missed!
-                Text(
-                  'Welcome back, you\'ve been missed!',
-                  style: TextStyle(
-                    color: Colors.grey[700],
-                    fontSize: 16,
+                const Row(
+                  children: [
+                    SizedBox(
+                      width: 40,
+                    ),
+                    Text(
+                      'Login to your Account',
+                      style: TextStyle(
+                        color: const Color.fromARGB(255, 0, 0, 0),
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ],
+                ),
+
+                const SizedBox(height: 13),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(36, 0, 36, 0),
+                  child: Center(
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: TextField(
+                            controller: _controllerEmail,
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  borderSide: BorderSide(
+                                    color: const Color.fromARGB(255, 255, 255,
+                                        255), // Border color when enabled
+                                  )),
+                              filled: true,
+                              hintStyle: TextStyle(
+                                  color: Color.fromARGB(128, 162, 162, 162)),
+                              hintText: "Email",
+                              fillColor: Colors.white70,
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                        // Add some space between the TextField and the next widget
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(36, 0, 36, 0),
+                  child: Center(
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          // This ensures the TextField takes up the available space
+                          child: TextField(
+                            controller: _controllerPassword,
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              filled: true,
+                              hintStyle: TextStyle(
+                                  color: Color.fromARGB(128, 162, 162, 162)),
+                              hintText: "Password",
+                              fillColor: Colors.white70,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                            width:
+                                10), // Add some space between the TextField and the next widget
+                      ],
+                    ),
                   ),
                 ),
 
-                const SizedBox(height: 25),
-
-                // username textfield
-                TextFormField(
-                  controller: _controllerEmail,
-                  decoration: InputDecoration(hintText: "Email"),
-                  obscureText: false,
-                ),
-
                 const SizedBox(height: 10),
-
-                // password textfield
-                TextFormField(
-                  controller: _controllerPassword,
-                  decoration: InputDecoration(hintText: "Password"),
-                  obscureText: true,
-                ),
-
-                const SizedBox(height: 10),
-                _errorMessage(),
 
                 // forgot password?
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const ResetPage()));
-                          },
-                          child: Text(
-                            'Forgot Password?',
-                            style: TextStyle(color: Colors.grey[600]),
-                          )),
-                    ],
+                Container(
+                  width: 330,
+                  margin:
+                      const EdgeInsets.all(10.0), // Adjust the value as needed
+                  decoration: BoxDecoration(
+                    color: Colors.white, // Background color of the container
+                    border: Border.all(
+                        color: Colors.black, width: 2.0), // Optional border
+                    borderRadius:
+                        BorderRadius.circular(15.0), // Rounded corners
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TextButton(
+                          onPressed: isLogin
+                              ? signInWithEmailAndPassword
+                              : createUserWithEmailAndPassword,
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: isLogin ? Text('Login') : Text('Register'),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-
                 const SizedBox(height: 25),
+                TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ResetPage()));
+                    },
+                    child: Text(
+                      'Forgot Password?',
+                      style: TextStyle(color: Colors.grey[600]),
+                    )),
 
                 // sign in button
                 TextButton(
-                  child: isLogin ? Text('Login') : Text('Register'),
-                  onPressed: isLogin
-                      ? signInWithEmailAndPassword
-                      : createUserWithEmailAndPassword,
-                ),
-
-                // not a member? register now
-                Row(
-                  // register now
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      isLogin ? 'Not a member?' : 'Already have an account?',
-                      style: TextStyle(color: Colors.grey[700]),
-                    ),
-                    const SizedBox(width: 4),
-                    TextButton(
-                        onPressed: () {
-                          setState(() {
-                            isLogin = !isLogin;
-                          });
-                        },
-                        child: Text(
-                          isLogin ? 'Register now' : 'Login now',
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        )),
-                    //log in or register
-                  ],
-                )
+                    onPressed: () {
+                      setState(() {
+                        isLogin = !isLogin;
+                      });
+                    },
+                    child: Text(
+                      isLogin ? 'Register now' : 'Login now',
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                _errorMessage(),
               ],
             ),
           ),
@@ -276,8 +322,8 @@ class _ResetPageState extends State<ResetPage> {
 
   Widget _logo() {
     return Image.asset(
-      'lib/images/Zenith-logos_white.png',
-      scale: 5,
+      "lib/images/wesafe.png",
+      scale: 1.5,
     );
   }
 
@@ -293,14 +339,13 @@ class _ResetPageState extends State<ResetPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             _logo(),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             TextFormField(
               controller: _controllerEmail,
               decoration: InputDecoration(hintText: "Email"),
               obscureText: false,
             ),
             SizedBox(height: 10),
-            SizedBox(height: 20),
             _submitButton(),
             SizedBox(height: 10),
             _errorMessage(),
