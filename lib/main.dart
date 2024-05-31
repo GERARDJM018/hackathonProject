@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hackathon2024/firebase_option.dart';
 import 'package:hackathon2024/widget_tree.dart';
+import 'package:hackathon2024/widgets/report_card.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -71,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: const Center(
+      body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
@@ -89,7 +90,15 @@ class _MyHomePageState extends State<MyHomePage> {
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[],
+
+          children: <Widget>[
+            Container(
+                width: MediaQuery.of(context).size.width * 0.95,
+                child: ReportCard(
+                    title: "Titsssssfsfsefsefsefsefsefsefsefsfsefsefsefle",
+                    body: "Body"))
+          ],
+
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
