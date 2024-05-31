@@ -209,7 +209,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.17.0"
-<<<<<<< HEAD
   firebase_storage:
     dependency: "direct main"
     description:
@@ -234,7 +233,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.9.7"
-=======
   flip_card:
     dependency: "direct main"
     description:
@@ -243,7 +241,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.0"
->>>>>>> 05459d16b21915e53d8f73304bbe652ed5c5b963
   flutter:
     dependency: "direct main"
     description: flutter
@@ -335,10 +332,10 @@ packages:
     dependency: transitive
     description:
       name: image_picker_ios
-      sha256: "4824d8c7f6f89121ef0122ff79bb00b009607faecc8545b86bca9ab5ce1e95bf"
+      sha256: "6703696ad49f5c3c8356d576d7ace84d1faf459afb07accbb0fae780753ff447"
       url: "https://pub.dev"
     source: hosted
-    version: "0.8.11+2"
+    version: "0.8.12"
   image_picker_linux:
     dependency: transitive
     description:

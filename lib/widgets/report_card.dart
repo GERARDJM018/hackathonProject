@@ -98,12 +98,7 @@ class _ReportCardState extends State<ReportCard> {
           children: [
             Container(
               padding: const EdgeInsets.all(8.0),
-<<<<<<< HEAD
               child: Text(widget.title, style: TextStyle(fontSize: 24),),
-=======
-              child: Text("Title", style: TextStyle(fontSize: 24),),
-              color: Colors.white,
->>>>>>> f8a3b1bad81033f2799c3164fac82607f91999a5
             ), 
             Container(
               color: Colors.white,
