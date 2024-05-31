@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:hackathon2024/auth/auth.dart';
 import 'package:hackathon2024/firebase_option.dart';
 import 'package:hackathon2024/widget_tree.dart';
 import 'package:hackathon2024/widgets/report_card.dart';
@@ -48,7 +50,12 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
+  final _firebaseAuth = FirebaseAuth.instance;
+
   void _onItemTapped(int index) {
+    if (index == 4) {
+      Auth(_firebaseAuth).signOut();
+    }
     setState(() {
       _selectedIndex = index;
     });
@@ -93,10 +100,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
           children: <Widget>[
             Container(
-                width: MediaQuery.of(context).size.width * 0.95,
-                child: ReportCard(
-                    title: "Titsssssfsfsefsefsefsefsefsefsefsfsefsefsefle",
-                    body: "Body"))
+              width: MediaQuery.of(context).size.width * 0.95,
+              child: (ReportCard(title: "Title", body: "Body")))
           ],
 
         ),
@@ -120,8 +125,8 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Education',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Account',
+            icon: Icon(Icons.logout),
+            label: 'Sign Out',
           )
         ],
         currentIndex: _selectedIndex,
@@ -132,3 +137,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
