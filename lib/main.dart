@@ -4,10 +4,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 >>>>>>> branch-firebase
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:hackathon2024/auth/auth.dart';
 import 'package:hackathon2024/firebase_option.dart';
 import 'package:hackathon2024/widget_tree.dart';
 import 'package:hackathon2024/widgets/report_card.dart';
+=======
+import 'package:hackathon2024/chart.dart';
+>>>>>>> branch-bar-chart
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,8 +31,14 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+<<<<<<< HEAD
       home: const WidgetTree(),
     );  
+=======
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: ChartScreen(),
+    );
+>>>>>>> branch-bar-chart
   }
 }
 
