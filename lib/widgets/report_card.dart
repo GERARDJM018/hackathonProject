@@ -97,7 +97,6 @@ class _ReportCardState extends State<ReportCard> {
           children: [
             Container(
               padding: const EdgeInsets.all(8.0),
-<<<<<<< HEAD
               child: Text(widget.title, style: TextStyle(fontSize: 24),),
             ), 
             Container(
@@ -128,53 +127,8 @@ class _ReportCardState extends State<ReportCard> {
                 child: StyleTwo(
                   func: () {},
                   icon: Icon(Icons.dangerous, color: Colors.red,)
-=======
-              child: Text(
-                "Title",
-                style: TextStyle(fontSize: 24),
-              ),
-            ),
-            Container(
-                color: Colors.white,
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.15,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    "Body ",
-                    maxLines: 4,
-                    softWrap: true,
->>>>>>> branch-UIAUTH
                   ),
-                )),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: StyleOne(
-                    icon: Icon(Icons.arrow_upward),
-                    counter: "12",
-                    func: () {},
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: StyleTwo(
-                    icon: Icon(Icons.arrow_downward),
-                    func: () {},
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: StyleTwo(
-                      func: () {},
-                      icon: Icon(
-                        Icons.dangerous,
-                        color: Colors.red,
-                      )),
-                ),
-              ],
-            ),
+                )]),
           ],
         ),
       ),
