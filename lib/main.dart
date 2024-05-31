@@ -108,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Container(
               width: MediaQuery.of(context).size.width * 0.95,
-              child: InkWell(child: ReportCard(title: "Title", body: "Body"), onTap: (){},),)
+              child: (ReportCard(title: "Title", body: "Body")))
           ],
         ),
       ),
