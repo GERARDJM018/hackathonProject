@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 
 class ChartScreen extends StatefulWidget {
   const ChartScreen({ Key? key }) : super(key: key);
@@ -19,7 +18,6 @@ class _ChartScreenState extends State<ChartScreen> {
 
   @override
   Widget build(BuildContext context) {
-    ChartData ch;
     return Scaffold(
       appBar: AppBar(
         title: Text('Bar Chart'),
@@ -28,7 +26,7 @@ class _ChartScreenState extends State<ChartScreen> {
         child: Container(
           child: SfCartesianChart(
             primaryXAxis: CategoryAxis(title: AxisTitle(text:'Week')), 
-            legend: Legend(isVisible: true, position: LegendPosition.bottom),
+            legend: Legend(isVisible: true, overflowMode: LegendItemOverflowMode.wrap, position: LegendPosition.bottom),
             series: <CartesianSeries>[
               StackedColumnSeries<ChartData, String>(
                 dataSource: chartData,

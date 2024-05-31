@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:hackathon2024/education2_flashcard.dart';
 import 'education2_card.dart';
-import 'education2_flashcard.dart';
 
 void main() {
   runApp(EducationApp());
