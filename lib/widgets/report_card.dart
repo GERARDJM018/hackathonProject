@@ -13,10 +13,9 @@ class ReportCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     // TODO: implement build
     return InkWell(
-      onTap: (){},
+      onTap: () {},
       child: Card(
         color: const Color.fromARGB(-1, 206, 214, 244),
         child: Column(
@@ -24,36 +23,54 @@ class ReportCard extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text("Title", style: TextStyle(fontSize: 24),),
-            ), 
+              child: Text(
+                "Title",
+                style: TextStyle(fontSize: 24),
+              ),
+            ),
             Container(
-              color: Colors.white,
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.15,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text("Body ", maxLines: 4, softWrap: true,),
-              )), 
-            Row(children: [
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: StyleOne(icon: Icon(Icons.arrow_upward), counter: "12", func: () {},),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: StyleTwo(icon: Icon(Icons.arrow_downward), func: () {},),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: StyleTwo(
-                  func: () {},
-                  icon: Icon(Icons.dangerous, color: Colors.red,)
+                color: Colors.white,
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height * 0.15,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "Body ",
+                    maxLines: 4,
+                    softWrap: true,
                   ),
-              ),
-              ],),
-            ],
-          ),
+                )),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: StyleOne(
+                    icon: Icon(Icons.arrow_upward),
+                    counter: "12",
+                    func: () {},
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: StyleTwo(
+                    icon: Icon(Icons.arrow_downward),
+                    func: () {},
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: StyleTwo(
+                      func: () {},
+                      icon: Icon(
+                        Icons.dangerous,
+                        color: Colors.red,
+                      )),
+                ),
+              ],
+            ),
+          ],
         ),
+      ),
     );
   }
 }
