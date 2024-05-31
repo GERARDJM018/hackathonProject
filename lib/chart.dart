@@ -26,7 +26,7 @@ class _ChartScreenState extends State<ChartScreen> {
         child: Container(
           child: SfCartesianChart(
             primaryXAxis: CategoryAxis(title: AxisTitle(text:'Week')), 
-            legend: Legend(isVisible: true, position: LegendPosition.bottom),
+            legend: Legend(isVisible: true, overflowMode: LegendItemOverflowMode.wrap, position: LegendPosition.bottom),
             series: <CartesianSeries>[
               StackedColumnSeries<ChartData, String>(
                 dataSource: chartData,
