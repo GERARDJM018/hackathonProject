@@ -18,7 +18,6 @@ class _ChartScreenState extends State<ChartScreen> {
 
   @override
   Widget build(BuildContext context) {
-    ChartData ch;
     return Scaffold(
       appBar: AppBar(
         title: Text('Bar Chart'),
