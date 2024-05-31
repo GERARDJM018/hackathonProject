@@ -128,7 +128,6 @@ class _AddPagesState extends State<AddPages> {
             _controllerTitle.clear();
             _image = null;
             setState(() {
-              
             });
           },),),
       body: SingleChildScrollView(
