@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "427784504032",
+    "project_id": "omelete-win",
+    "storage_bucket": "omelete-win.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427784504032:android:96a08b5540371e9c7c4685",
+        "android_client_info": {
+          "package_name": "com.example.hackathon2024"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-ddMhsUfz621s5xZbRfIbFDMbk7mZ1eA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
