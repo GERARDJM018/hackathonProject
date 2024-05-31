@@ -15,7 +15,7 @@ class StyleOne extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return ElevatedButton.icon(
-      onPressed: () {}, 
+      onPressed: () {func();}, 
       label: Text(counter),
       icon: icon,);
   }
