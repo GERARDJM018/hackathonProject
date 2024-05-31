@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +6,11 @@ import 'package:hackathon2024/auth/auth.dart';
 import 'package:hackathon2024/firebase_option.dart';
 import 'package:hackathon2024/widget_tree.dart';
 import 'package:hackathon2024/widgets/report_card.dart';
+=======
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:hackathon2024/pages/add_pages.dart';
+>>>>>>> branch-add-page
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -106,6 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
         ),
       ),
+<<<<<<< HEAD
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -133,6 +140,15 @@ class _MyHomePageState extends State<MyHomePage> {
         selectedItemColor: Color.fromRGBO(0, 0, 0, 1),
         unselectedItemColor: Color.fromRGBO(128, 128, 128, 1),
         onTap: _onItemTapped,
+=======
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context, 
+          CupertinoPageRoute(builder: (context) => AddPages()));
+        },
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
+>>>>>>> branch-add-page
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

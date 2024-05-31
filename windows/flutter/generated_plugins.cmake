@@ -3,9 +3,13 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+<<<<<<< HEAD
   cloud_firestore
   firebase_auth
   firebase_core
+=======
+  file_selector_windows
+>>>>>>> branch-add-page
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
