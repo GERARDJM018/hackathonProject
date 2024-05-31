@@ -25,11 +25,13 @@ class EducationCard extends StatelessWidget {
             Text(
               title,
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center
             ),
             SizedBox(height: 10),
             Text(
               content,
               style: TextStyle(fontSize: 16),
+              textAlign: TextAlign.center
             ),
           ],
         ),
