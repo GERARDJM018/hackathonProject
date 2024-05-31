@@ -107,8 +107,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              width: MediaQuery.of(context).size.width * 0.95,
-              child: ReportCard(title: "Title", body: "Body"))
+                width: MediaQuery.of(context).size.width * 0.95,
+                child: ReportCard(
+                    title: "Titsssssfsfsefsefsefsefsefsefsefsfsefsefsefle",
+                    body: "Body"))
           ],
         ),
       ),
