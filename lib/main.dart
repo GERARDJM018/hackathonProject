@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:hackathon2024/auth/auth.dart';
 import 'package:hackathon2024/chart.dart';
 import 'package:hackathon2024/education2.dart';
-import 'package:hackathon2024/education_card.dart';
 import 'package:hackathon2024/firebase_option.dart';
 import 'package:hackathon2024/pages/add_pages.dart';
 import 'package:hackathon2024/pages/home_page.dart';
