@@ -36,7 +36,7 @@ class _AddPagesState extends State<AddPages> {
 
   final List<String> categoryItems = ['SMS Phising', 'Email Phising', 'Credit Card Scams', 'Payment Fraud', 'Prize Draw Scams', 'Others'];
 
-  String selectedValue = "Others";
+  static String selectedValue = "Others";
   File? _image;
 
   Future<void> _pickImage() async {
@@ -192,6 +192,7 @@ class _AddPagesState extends State<AddPages> {
                     return null;
                   },
                   onChanged: (value) {
+                    selectedValue = value.toString();
                     //Do something when selected item is changed.
                   },
                   onSaved: (value) {

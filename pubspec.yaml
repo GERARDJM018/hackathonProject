@@ -66,11 +66,8 @@ flutter:
   uses-material-design: true
   assets:
     - lib/images/wesafe.png
-<<<<<<< HEAD
 
   # To add assets to your application, add an assets section, like this:
-=======
->>>>>>> f88d19daf2600cfff159a710f3726d137af5a0f5
     - assets/BlocScam.jpg
     - assets/person.jpg
 
