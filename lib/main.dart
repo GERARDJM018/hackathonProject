@@ -3,7 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hackathon2024/auth/auth.dart';
 import 'package:hackathon2024/chart.dart';
-import 'package:hackathon2024/education_card.dart';
+import 'package:hackathon2024/education2.dart';
 import 'package:hackathon2024/firebase_option.dart';
 import 'package:hackathon2024/pages/add_pages.dart';
 import 'package:hackathon2024/pages/home_page.dart';
@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
     HomePage(),
     ChartScreen(),
     AddPages(),
-    EducationCard(title: "title", content: "c")
+    EducationApp()
   ];
 
   final _firebaseAuth = FirebaseAuth.instance;
