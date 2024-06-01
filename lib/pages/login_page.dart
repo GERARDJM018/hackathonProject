@@ -266,10 +266,6 @@ class _ResetPageState extends State<ResetPage> {
     }
   }
 
-  Widget _title() {
-    return const Text('Zenith');
-  }
-
   Widget _entryField(String title, TextEditingController controller) {
     return TextField(
       controller: controller,
