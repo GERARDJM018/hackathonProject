@@ -70,7 +70,11 @@ class _MyHomePageState extends State<MyHomePage> {
       Auth(_firebaseAuth).signOut();
     }
     setState(() {
+      if (index == 4) {
+        _selectedIndex == 1;
+      } else {
       _selectedIndex = index;
+      }
     });
   }
 
