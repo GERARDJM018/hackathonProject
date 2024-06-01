@@ -17,13 +17,10 @@ class ReportCard extends StatefulWidget {
   }) : super(key: key);
 
   @override
-<<<<<<< HEAD
   _ReportCardState createState() => _ReportCardState();
-
 }
 
 class _ReportCardState extends State<ReportCard> {
-
   FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
   late User? user = Auth(_firebaseAuth).currentUser;
@@ -38,7 +35,6 @@ class _ReportCardState extends State<ReportCard> {
         .doc(widget.reportId)
         .get();
 
-
     likes = snap['likes'];
 
     if (likes.contains(user!.email)) {
@@ -47,49 +43,59 @@ class _ReportCardState extends State<ReportCard> {
       isLiked = false;
     }
 
-
-    setState(() {
-      
-    });
+    setState(() {});
   }
 
   void _like() async {
     print("asdd");
     await FirebaseFirestore.instance
-      .collection('reports')
-      .doc(widget.reportId)
-      .update({
-        'likes': FieldValue.arrayUnion([user!.email]),
-      });
-
-    _loadDatabase();  
-
-    setState(() {
-      
+        .collection('reports')
+        .doc(widget.reportId)
+        .update({
+      'likes': FieldValue.arrayUnion([user!.email]),
     });
+
+    _loadDatabase();
+
+    setState(() {});
   }
 
   void _unLike() async {
     await FirebaseFirestore.instance
-      .collection('reports')
-      .doc(widget.reportId)
-      .update({
-        'likes': FieldValue.arrayRemove([user!.email]),
-      });
+        .collection('reports')
+        .doc(widget.reportId)
+        .update({
+      'likes': FieldValue.arrayRemove([user!.email]),
+    });
 
     _loadDatabase();
 
-    setState(() {
-      
-    });
+    setState(() {});
   }
 
-
-
   @override
-=======
->>>>>>> e5a29b041faa014bca60376dcaa8a7b85be1dfea
   Widget build(BuildContext context) {
+    void _showReportDialog() {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Report Post'),
+            content: Text(
+                'This particular post is reported. Please wait some time for the admin to decide whether or not to delete the post.'),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop(); // Dismiss the alert
+                },
+                child: Text('OK'),
+              ),
+            ],
+          );
+        },
+      );
+    }
+
     // TODO: implement build
     return InkWell(
       onTap: () {},
@@ -100,45 +106,10 @@ class _ReportCardState extends State<ReportCard> {
           children: [
             Container(
               padding: const EdgeInsets.all(8.0),
-<<<<<<< HEAD
-              child: Text(widget.title, style: TextStyle(fontSize: 24),),
-            ), 
-            Container(
-              color: Colors.white,
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.15,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(widget.body, maxLines: 4, softWrap: true,),
-              )), 
-            Row(children: [
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: StyleOne(
-                  icon: Icon(Icons.arrow_upward, 
-                    color: isLiked
-                      ?Colors.blueAccent
-                      :Colors.black,), 
-                  counter: likes.length.toString(), 
-                  func: isLiked ?() async {_unLike();} :() async {_like();},),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: StyleTwo(icon: Icon(Icons.arrow_downward), func: () {},),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: StyleTwo(
-                  func: () {},
-                  icon: Icon(Icons.dangerous, color: Colors.red,)
-                  ),
-                )]),
-=======
               child: Text(
-                "Title",
+                widget.title,
                 style: TextStyle(fontSize: 24),
               ),
-              color: Colors.white,
             ),
             Container(
                 color: Colors.white,
@@ -147,40 +118,46 @@ class _ReportCardState extends State<ReportCard> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    "Body ",
+                    widget.body,
                     maxLines: 4,
                     softWrap: true,
                   ),
                 )),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: StyleOne(
-                    icon: Icon(Icons.arrow_upward),
-                    counter: "12",
-                    func: () {},
+            Row(children: [
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: StyleOne(
+                  icon: Icon(
+                    Icons.arrow_upward,
+                    color: isLiked ? Colors.blueAccent : Colors.black,
                   ),
+                  counter: likes.length.toString(),
+                  func: isLiked
+                      ? () async {
+                          _unLike();
+                        }
+                      : () async {
+                          _like();
+                        },
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: StyleTwo(
-                    icon: Icon(Icons.arrow_downward),
-                    func: () {},
-                  ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: StyleTwo(
+                  icon: Icon(Icons.arrow_downward),
+                  func: () {},
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: StyleTwo(
-                      func: () {},
-                      icon: Icon(
-                        Icons.dangerous,
-                        color: Colors.red,
-                      )),
-                ),
-              ],
-            ),
->>>>>>> e5a29b041faa014bca60376dcaa8a7b85be1dfea
+              ),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: StyleTwo(
+                    func: _showReportDialog,
+                    icon: Icon(
+                      Icons.dangerous,
+                      color: Colors.red,
+                    )),
+              )
+            ]),
           ],
         ),
       ),

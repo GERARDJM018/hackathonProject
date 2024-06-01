@@ -11,10 +11,11 @@ import 'package:hackathon2024/widget_tree.dart';
 import 'package:hackathon2024/widgets/report_card.dart';
 import 'package:flutter/cupertino.dart';
 
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -27,11 +28,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color.fromARGB(255, 255, 255, 255)),
         useMaterial3: true,
       ),
       home: const WidgetTree(),
-    );  
+    );
   }
 }
 
@@ -115,4 +117,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
